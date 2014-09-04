@@ -10,7 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<activemq.version>5.10.0</activemq.version>
 
-		<openshift.amq.user>admin</openshift.amq.user>
+		<openshift.amq.user>REPLACE_ME</openshift.amq.user>
 		<openshift.amq.password>REPLACE_ME</openshift.amq.password>
 		<openshift.amq.url>ssl://REPLACE_ME:2303</openshift.amq.url>
 		
