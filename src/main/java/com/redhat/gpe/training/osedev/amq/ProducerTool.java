@@ -120,7 +120,7 @@ public class ProducerTool {
 				.println("\n\n-------------------------------------------------------\n");
 		System.out.println("Connecting to URL: " + url + " (" + user + ":"
 				+ password + ")");
-		System.out.println("Consuming messages from queue: " + queueName);
+		System.out.println("Sending messages to queue: " + queueName);
 		System.out
 				.println("\n-------------------------------------------------------\n");
 	}
