@@ -10,10 +10,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<activemq.version>5.10.0</activemq.version>
 
+		<!-- TODO: Update the values for the two lines below -->
 		<openshift.amq.user>REPLACE_ME</openshift.amq.user>
 		<openshift.amq.password>REPLACE_ME</openshift.amq.password>
-		<openshift.amq.url>ssl://REPLACE_ME:2303</openshift.amq.url>
-		
+
+		<openshift.amq.url>tcp://127.0.0.1:31313</openshift.amq.url>	
 		<openshift.amq.queueName>demo.training.mailbox</openshift.amq.queueName>
 		
 		<openshift.truststore.filename>amq.truststore</openshift.truststore.filename>
@@ -61,24 +62,6 @@
 								<configuration>
 									<mainClass>com.redhat.gpe.training.osedev.amq.ProducerTool</mainClass>
 
-									<systemProperties>
-										<systemProperty>
-											<key>javax.net.ssl.trustStore</key>
-											<value>${openshift.truststore.filename}</value>
-										</systemProperty>
-										<systemProperty>
-											<key>javax.net.ssl.trustStorePassword</key>
-											<value>${openshift.truststore.password}</value>
-										</systemProperty>
-										
-										<!-- 
-										<systemProperty>
-											<key>javax.net.debug</key>
-											<value>all</value>
-										</systemProperty>
-										 -->
-									</systemProperties>
-
 									<arguments>
 										<argument>--url=${openshift.amq.url}</argument>
 										<argument>--queueName=${openshift.amq.queueName}</argument>
@@ -111,24 +94,6 @@
 								</goals>
 								<configuration>
 									<mainClass>com.redhat.gpe.training.osedev.amq.ConsumerTool</mainClass>
-
-									<systemProperties>
-										<systemProperty>
-											<key>javax.net.ssl.trustStore</key>
-											<value>${openshift.truststore.filename}</value>
-										</systemProperty>
-										<systemProperty>
-											<key>javax.net.ssl.trustStorePassword</key>
-											<value>${openshift.truststore.password}</value>
-										</systemProperty>
-										
-										<!-- 
-										<systemProperty>
-											<key>javax.net.debug</key>
-											<value>all</value>
-										</systemProperty>
-										 -->
-									</systemProperties>
 
 									<arguments>
 										<argument>--url=${openshift.amq.url}</argument>
